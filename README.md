@@ -16,8 +16,8 @@
 ### 1. Клонируйте репозиторий
 
 ```bash
-    git clone https://github.com/your-username/telegram-booking-bot.git
-    cd telegram-booking-bot
+    git clone https://github.com/Gexayr/booking-bot.git
+    cd booking-bot
 ```
 
 ## 2. Создайте .env файл

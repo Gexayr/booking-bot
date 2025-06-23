@@ -10,8 +10,9 @@ services:
       - mongo
     networks:
       - bot-net
-    volumes:
-      - .:/app
+    # Remove the volumes mapping for production
+    # volumes:
+    #   - .:/app
 
   mongo:
     image: mongo:7.0
@@ -20,6 +21,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"  # Optional: for external access
     volumes:
       - mongo-data:/data/db
     networks:

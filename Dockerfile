@@ -1,20 +1,29 @@
-# Use an official Node.js runtime as a parent image
+# Use Node.js 18 Alpine for smaller image size
 FROM node:18-alpine
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy package files first for better caching
 COPY package*.json ./
 
-# Install any dependencies
-RUN npm install
+# Install dependencies
+RUN npm ci --only=production
 
-# Copy the rest of your application code to the working directory
+# Copy application files
 COPY . .
 
-# Expose the port your app runs on (if applicable, though not strictly needed for a bot)
-# EXPOSE 3000
+# Create non-root user for security
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nodejs -u 1001
 
-# Define the command to run your application
+# Change ownership of the app directory
+RUN chown -R nodejs:nodejs /app
+USER nodejs
+
+# Health check (optional)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "console.log('Bot is running')" || exit 1
+
+# Start the application
 CMD ["node", "index.js"]
