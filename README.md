@@ -25,7 +25,7 @@
 ### Создайте файл .env в корне проекта:
 
 ```bash
-    TELEGRAM_TOKEN=ваш_токен_бота
+    BOT_TOKEN=ваш_токен_бота
     MONGO_URI=mongodb://root:example@mongo:27017/booking?authSource=admin
 ```
 
