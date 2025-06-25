@@ -56,11 +56,39 @@ mongoose.connect(process.env.MONGO_URI, {
   docker-compose down
   docker-compose up --build
 ```
+or if need to clear old data
+```bash
+    docker-compose down -v
+    docker volume rm booking_mongo-data
+    docker-compose up --build
+```
 
 ## 🧼 Остановка и очистка
 
 ```bash
     docker-compose down -v
+```
+
+## Structure
+```
+booking/
+├── config/
+│   └── db.js                # MongoDB connection setup
+├── models/
+│   └── Booking.js           # Mongoose Booking model
+├── utils/
+│   ├── translations.js      # Language translations and getTranslation helper
+│   ├── keyboards.js         # Keyboard generation functions (calendar, time, people, etc.)
+│   └── cron.js              # Cron job for cleaning old bookings
+├── handlers/
+│   ├── start.js             # /start command handler
+│   ├── callback.js          # Callback query handler for inline keyboards
+│   └── message.js           # Message handler for text inputs
+├── index.js                 # Main entry point to initialize the bot
+├── package.json             # 
+├── Dockerfile               # 
+├── docker-compose.yaml      # 
+└── .env                     #  for environment variables
 ```
 
 ## 📚 Лицензия
