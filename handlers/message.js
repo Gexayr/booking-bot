@@ -64,7 +64,7 @@ function handleMessage(bot) {
                     message += `${index + 1}. 📆 ${booking.date} 🕒 ${booking.time}:00 👥 ${booking.people}\n`;
                     buttons.push([
                         {
-                            text: `❌ ${getTranslation(userId, 'cancelBooking')} ${booking.date} ${booking.time}:00`,
+                            text: `${getTranslation(userId, 'cancelBooking')} ${booking.date} ${booking.time}:00`,
                             callback_data: `cancel_${booking._id}`,
                         },
                     ]);

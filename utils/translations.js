@@ -27,6 +27,7 @@ const translations = {
     timeSlotTaken: 'Ցավոք, այս ժամանա՞կաշրջանը արդեն զբաղված է: Ընտրեք այլ ժամ:',
     weekDays: ['Կրկ', 'Երք', 'Չրք', 'Հնգ', 'Ուրբ', 'Շբթ', 'Կիր'],
     addressValue: '*3, 3a Sebastia St, Yerevan*',
+    cancelNo: 'Չեղարկումը չեղարկվեց 😊',
   },
   ru: {
     welcome: 'Добро пожаловать 🍽️\nПожалуйста, выберите дату из календаря.',
@@ -56,6 +57,7 @@ const translations = {
     timeSlotTaken: 'К сожалению, это время уже занято. Выберите другое время.',
     weekDays: ['Пнд', 'Втр', 'Срд', 'Чтв', 'Птн', 'Сбт', 'Вск'],
     addressValue: '*3, 3a Sebastia St, Yerevan*',
+    cancelNo: 'Отмена отменена 😊',
   },
   en: {
     welcome: 'Welcome 🍽️\nPlease select a date from the calendar.',
@@ -85,6 +87,7 @@ const translations = {
     timeSlotTaken: 'Sorry, this time slot is already taken. Please choose another time.',
     weekDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     addressValue: '*3, 3a Sebastia St, Yerevan*',
+    cancelNo: 'Cancellation aborted 😊',
   },
 };
 
