@@ -57,7 +57,7 @@ function handleMessage(bot) {
                     return;
                 }
 
-                let message = `📋 ${getTranslation(userId, 'myBookings')}:\n\n`;
+                let message = `${getTranslation(userId, 'myBookings')}:\n\n`;
                 const buttons = [];
 
                 for (const [index, booking] of bookings.entries()) {
