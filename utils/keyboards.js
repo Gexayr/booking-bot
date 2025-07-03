@@ -54,7 +54,9 @@ function getCalendarKeyboard(year, month, userId) {
 
   const next = moment([year, month]).add(1, 'month');
   keyboard.push([
-    { text: '➡️', callback_data: `month_${next.year()}_${next.month()}` },
+    { text: `⬅️`, callback_data: `month_${prev.year()}_${prev.month()}` },
+    { text: `${currentMonth.format('MMMM')}`, callback_data: 'ignore_month_name_display' },
+    { text: `➡️`, callback_data: `month_${next.year()}_${next.month()}` },
   ]);
 
   return { reply_markup: { inline_keyboard: keyboard } };
